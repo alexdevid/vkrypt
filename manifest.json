@@ -1,0 +1,31 @@
+{
+	"manifest_version": 2,
+	"name": "VK-Crypt",
+	"description": "VK messages encryption",
+	"version": "0.1",
+	"icons": {
+		"48": "icons/48.png",
+		"128": "icons/128.png"
+	},
+	"background": {
+		"scripts": ["js/bootstrap.js"],
+		"persistent": false
+	},
+	"content_scripts": [{
+			"matches": [
+				"*://*.vk.com/*"
+			],
+			"css": [
+				"css/style.css"
+			],
+			"js": [
+				"js/app.cryptojs.js",
+				"js/app.init.js"
+			]
+		}],
+	"permissions": [
+		"tabs",
+		"storage",
+		"*://vk.com/*"
+	]
+}
